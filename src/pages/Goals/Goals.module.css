@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.splitContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 var(--space);
+}
+
+.goalsTable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
