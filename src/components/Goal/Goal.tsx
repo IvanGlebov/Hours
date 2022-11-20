@@ -1,23 +1,22 @@
 import React     from "react";
-import styles    from "Goal.module.css";
-import { Paper } from "@mui/material";
+import styles                from "./Goal.module.css";
+import { IconButton, Paper } from "@mui/material";
+import CancelIcon            from '@mui/icons-material/Cancel';
 
-const Goal = () => {
+const Goal = ({name, removeAction}: {name:string, removeAction: (id: number) => void}) => {
   return (
-    <Paper sx={{
-      backgroundColor: "#23272f",
-      width: "100%",
-      color: "white",
-      borderRadius: 4,
-      height: 64,
-      display: "flex",
-      justifyContent: "left",
-      alignItems: "center"
-    }} elevation={8}>
-      <div>
-        Goal
-      </div>
-    </Paper>
+    <div>
+      <Paper className={styles.paper} elevation={8}>
+        <div className={styles.goalInnerWrapper}>
+          <div className={styles.goalName}>
+            {name}
+          </div>
+          <IconButton onClick={() => {removeAction(1)}}>
+            <CancelIcon />
+          </IconButton>
+        </div>
+      </Paper>
+    </div>
   )
 }
 export default Goal;
