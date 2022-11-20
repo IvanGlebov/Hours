@@ -1,16 +1,29 @@
 .container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .splitContent {
+    height: calc(100vh - 64px - 48px);
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 0 var(--space);
+    gap: var(--space);
 }
 
 .goalsTable {
     display: flex;
     flex-direction: column;
     gap: var(--space);
+}
+
+.sideSection {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.overallBar {
+    height: inherit;
 }
