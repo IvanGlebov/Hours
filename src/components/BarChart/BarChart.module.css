@@ -1,0 +1,21 @@
+.barWrapper {
+    display: flex;
+    width: calc(var(--space) * 5);
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    background-color: black;
+    border-radius: calc(var(--space));
+}
+
+.barWrapper > *:first-child {
+    border-top-left-radius: calc(var(--space));
+    border-top-right-radius: calc(var(--space));
+}
+
+.barWrapper > *:last-child {
+    border-bottom-left-radius: calc(var(--space));
+    border-bottom-right-radius: calc(var(--space));
+}
+
+
