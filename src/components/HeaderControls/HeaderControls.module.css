@@ -6,4 +6,6 @@
     justify-content: flex-start;
     gap: var(--space);
     padding: var(--space);
+    padding-top: calc(var(--space) * 2);
+    height: 64px;
 }
