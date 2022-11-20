@@ -1,14 +1,24 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { Item }                             from "./types";
+import { Goal }                             from "./types";
 
-const itemsAdapter = createEntityAdapter<Item>({})
+const goalsAdapter = createEntityAdapter<Goal>({})
 
-export const itemsSlice = createSlice({
-  name: 'items',
-  initialState: itemsAdapter.getInitialState({
+export const goalsSlice = createSlice({
+  name: 'goals',
+  initialState: goalsAdapter.getInitialState({
     status: 'idle'
   }),
   reducers: {
+    addGoal: (state, { payload }) => {
+      goalsAdapter.addOne(state, payload);
+
+    },
+    updateGoal: (state, { payload }) => {
+      goalsAdapter.updateOne(state, payload);
+    }
 
   }
 })
+
+
+export default goalsSlice.reducer;
