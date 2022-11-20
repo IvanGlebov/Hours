@@ -32,7 +32,7 @@ const Goals = () => {
           <HeaderControls/>
           <div className={styles.goalsTable}>
             {Object.values(goalsEntities).map((el) =>
-              <Goal goal={el as GoalType} removeAction={removeGoal}/>
+              <Goal name={el?.name as string} id={el?.id as number} removeAction={removeGoal}/>
             )}
           </div>
         </div>
