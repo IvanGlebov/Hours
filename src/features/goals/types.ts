@@ -1,9 +1,10 @@
 export type Goal = {
-  name: String,
-  description?: String,
+  id: number,
+  name: string,
+  description?: string,
   duration: Number,
   intervals?: Array<Interval>
-  startDate?: String,
+  startDate?: string,
 }
 
 export type Interval = {

@@ -9,12 +9,17 @@ export const goalsSlice = createSlice({
     status: 'idle'
   }),
   reducers: {
-    addGoal: (state, { payload }) => {
+    addOneGoal: (state, { payload }) => {
       goalsAdapter.addOne(state, payload);
-
     },
-    updateGoal: (state, { payload }) => {
+    updateOneGoal: (state, { payload }) => {
       goalsAdapter.updateOne(state, payload);
+    },
+    setAllGoals: (state, { payload }) => {
+      goalsAdapter.setMany(state, payload);
+    },
+    removeOneGoal: (state, { payload }: { payload: number }) => {
+      goalsAdapter.removeOne(state, payload);
     }
 
   }
@@ -22,3 +27,4 @@ export const goalsSlice = createSlice({
 
 
 export default goalsSlice.reducer;
+export const { addOneGoal, updateOneGoal, setAllGoals, removeOneGoal } = goalsSlice.actions;
