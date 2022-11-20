@@ -1,9 +1,8 @@
 .container {
-    height:100vh;
+    height: calc(100vh - var(--space));
     display: flex;
     padding-top: calc(var(--space) * 1);
     flex-direction: column;
-    /*gap: var(--space);*/
 }
 
 .container > * {
@@ -12,7 +11,7 @@
 }
 
 .container > *:nth-child(2) {
-    margin-top: var(--space);
+    margin-top: calc(var(--space) * 1.5 );
 }
 
 .logoWrapper {
