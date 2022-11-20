@@ -1,10 +1,14 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React                from 'react';
+import { createRoot }       from 'react-dom/client';
+import { Provider }         from 'react-redux';
+import { store }            from './app/store';
+import App                  from './App';
+import { BrowserRouter }    from "react-router-dom";
+import reportWebVitals      from './reportWebVitals';
 import './index.css';
+import { SnackbarProvider } from "notistack";
+import { ThemeProvider }    from "@mui/material";
+import theme                from "./theme";
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -12,7 +16,13 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <SnackbarProvider>
+            <App />
+          </SnackbarProvider>
+        </ThemeProvider>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
