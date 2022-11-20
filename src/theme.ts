@@ -5,15 +5,6 @@ const theme = createTheme({
     primary: {
       main: "#0074a6"
     }
-  },
-  components: {
-    MuiPaper: {
-      defaultProps: {
-        sx: {
-
-        }
-      }
-    }
   }
 })
 
