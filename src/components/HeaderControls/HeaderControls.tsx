@@ -1,8 +1,8 @@
 import React, { useState }    from "react";
 import styles                 from "./HeaderControls.module.css"
 import { Button, IconButton } from "@mui/material";
-import AddCircleIcon          from '@mui/icons-material/AddCircle';
-import { AddGoalModal }       from "../index";
+import AddCircleIcon      from '@mui/icons-material/AddCircle';
+import { AddObjectModal } from "../index";
 
 const HeaderControls = () => {
 
@@ -18,7 +18,7 @@ const HeaderControls = () => {
         <AddCircleIcon fontSize="large" />
       </IconButton>
       <Button variant="outlined" size="large">Filters</Button>
-      <AddGoalModal open={open} toggle={toggle}/>
+      <AddObjectModal open={open} toggle={toggle}/>
     </div>
   )
 }
