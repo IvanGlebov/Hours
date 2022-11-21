@@ -3,6 +3,7 @@ import HeaderControls from "./HeaderControls/HeaderControls"
 import Goal from "./Goal/Goal"
 import BarChart     from "./BarChart/BarChart";
 import AddGoalModal from "./AddGoalModal/AddGoalModal";
+import InlineSelect from "./InlineSelect/InlineSelect";
 
 export {
   Navbar,
@@ -10,4 +11,5 @@ export {
   Goal,
   BarChart,
   AddGoalModal,
+  InlineSelect,
 };
