@@ -1,8 +1,8 @@
-import Goals from "./Goals/Goals";
+import Goals from './Goals/Goals'
+import Settings from './Settings/Settings'
 
-
-// eslint-disable-next-line import/no-anonymous-default-export
 export {
-  Goals,
+	Goals,
+	Settings,
 }
 

@@ -2,7 +2,7 @@ export type Goal = {
   id: number,
   name: string,
   description?: string,
-  duration: Number,
+  duration: number,
   intervals?: Array<Interval>
   startDate?: string,
 }

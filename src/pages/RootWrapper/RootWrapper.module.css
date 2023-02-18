@@ -1,0 +1,56 @@
+.App {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--modal-background);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    color: var(--text-color);
+    text-decoration: none !important;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+:root {
+    --primary-color: #0074a6;
+    --container-background: rgba(52,58,70,.8);
+    --modal-background: #23272f;
+
+    --space: 16px;
+
+    --text-color: rgb(235 236 240);
+    --hover-background: rgb(52 58 70);
+    --active-color: rgb(20 158 202);
+    --active-background: rgba(88,175,223,.1);
+}
+.App {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--modal-background);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    color: var(--text-color);
+    text-decoration: none !important;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+:root {
+    --primary-color: #0074a6;
+    --container-background: rgba(52,58,70,.8);
+    --modal-background: #23272f;
+
+    --space: 16px;
+
+    --text-color: rgb(235 236 240);
+    --hover-background: rgb(52 58 70);
+    --active-color: rgb(20 158 202);
+    --active-background: rgba(88,175,223,.1);
+}
