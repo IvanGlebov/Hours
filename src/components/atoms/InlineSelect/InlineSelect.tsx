@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import styles                      from './InlineSelect.module.css'
 import classNames                  from 'classnames'
+// import { TTiming }                 from '../../../types/durations/timings'
 
 const InlineSelect = (
 	{ selectOptions, onChange, defaultIndex = 0 }:

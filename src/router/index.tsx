@@ -1,13 +1,13 @@
 import React                   from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import RootWrapper         from '../pages/RootWrapper/RootWrapper'
-import { Goals, Settings } from '../pages'
-import User from '../pages/User/User'
-
+import RootWrapper             from '../pages/RootWrapper/RootWrapper'
+import { Goals, Settings }     from '../pages'
+import User                    from '../pages/User/User'
+import { EApplicationRoutes }  from './types'
 
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: EApplicationRoutes.BASE_PAGE_ROUTE,
 		element: <RootWrapper />,
 		children: [
 			{
@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
 				element: <Goals />
 			},
 			{
-				path: 'user',
+				path: EApplicationRoutes.USER_PAGE_ROUTE,
 				element: <User />
 			},
 			{
-				path: 'settings',
+				path: EApplicationRoutes.SETTINGS_PAGE_ROUTE,
 				element: <Settings />
 			}
 		]

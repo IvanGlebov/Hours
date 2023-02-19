@@ -1,47 +1,17 @@
-import React, { useState }                from 'react'
-import Modal                              from '@mui/material/Modal'
-import styles                             from './AddObjectModal.module.css'
-import { Button, styled, TextField }      from '@mui/material'
+import React, { useState } from 'react'
+import Modal               from '@mui/material/Modal'
+import styles              from './AddObjectModal.module.css'
+import { Button }          from '@mui/material'
 
-import {
-	getNewId
 // eslint-disable-next-line max-len
-}                                         from '../../../features/goals/goalsSelectors'
+import { getNewId }                       from '../../../features/goals/goalsSelectors'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 
-import {
-	addOneGoal
-// eslint-disable-next-line max-len
-}                                         from '../../../features/goals/goalsSlice'
-import { useSnackbar }                    from 'notistack'
-import { InlineSelect }                   from '../../index'
-
-const CssTextField = styled(TextField)({
-	'& label.Mui-focused': {
-		color: '#0074a6',
-	},
-	'& label': {
-		color: 'white',
-	},
-	'&:hover label': {
-		color: '#0074a6',
-	},
-	'& .MuiInput-underline:after': {
-		borderBottomColor: '#0074a6',
-	},
-	'& .MuiOutlinedInput-root': {
-		color: 'white',
-		'& fieldset': {
-			borderColor: 'white',
-		},
-		'&:hover fieldset': {
-			borderColor: '#0074a6',
-		},
-		'&.Mui-focused fieldset': {
-			borderColor: '#0074a6',
-		}
-	},
-})
+import { addOneGoal }        from '../../../features/goals/goalsSlice'
+import { useSnackbar }       from 'notistack'
+import { InlineSelect }      from '../../index'
+import { CssTextField }      from '../../atoms'
+import { ETimings, TTiming } from '../../../types/durations/timings'
 
 
 const AddObjectModal = (
@@ -63,7 +33,11 @@ const AddObjectModal = (
 	}
 
 	const modalOptions = ['Goal', 'Project', 'Work']
-	const timingOptions = ['hours / week', 'hours', 'hours / day']
+	const timingOptions: TTiming[] = [
+		ETimings.HOURS_PER_WEEK,
+		ETimings.HOURS,
+		ETimings.HOURS_PER_DAY
+	]
 	const onSelectChange = (e: string) => {
 		console.log('new Value: ', e)
 	}
@@ -75,8 +49,14 @@ const AddObjectModal = (
 				onClose={ toggle }
 			>
 				<div className={ styles.modalContentWrapper }>
-					<h1>Add <InlineSelect onChange={ onSelectChange }
-						selectOptions={ modalOptions }/></h1>
+					<h1>
+						Add
+						<InlineSelect
+							onChange={ onSelectChange }
+							selectOptions={ modalOptions }
+							defaultIndex={ 1 }
+						/>
+					</h1>
 					<div className={ styles.inputsGroup }>
 						<CssTextField
 							required
@@ -88,11 +68,15 @@ const AddObjectModal = (
 							label="Goal short description"
 							onChange={ (e) => setDescription(e.target.value) }/>
 						<h1>Set timing:
-							<InlineSelect selectOptions={ timingOptions }
+							<InlineSelect
+								selectOptions={ timingOptions }
 								onChange={ (e) => console.log(e) }
 								defaultIndex={ 1 }/>
 						</h1>
-						<CssTextField required variant="outlined" type="number"
+						<CssTextField
+							required
+							variant="outlined"
+							type="number"
 							label="Duration in hours"
 							onChange={
 								(e) =>
@@ -102,8 +86,13 @@ const AddObjectModal = (
 
 					</div>
 					<div className={ styles.actionButtons }>
-						<Button variant="contained" type="submit"
-							onClick={ onFormSubmit }>Submit</Button>
+						<Button
+							variant="contained"
+							type="submit"
+							onClick={ onFormSubmit }
+						>
+							Submit
+						</Button>
 						<Button
 							variant="outlined"
 							color="secondary"
