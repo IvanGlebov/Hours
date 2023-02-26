@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react'
-import { Outlet }           from 'react-router'
-import { Navbar }           from '../../components'
-import { useAppDispatch }   from '../../app/hooks'
-import { addOneGoal }       from '../../features/goals/goalsSlice'
+import { Outlet } from 'react-router'
+import { Navbar } from '../../components'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { addOneGoal } from '../../features/goals/goalsSlice'
 import '../../App.css'
+import { isUserActive } from '../../features/user/userSelectors'
+import classNames from 'classnames'
+import styles from './RootWrapper.module.css'
 
 const RootWrapper = () => {
 
 	const dispatch = useAppDispatch()
-
+	const isActive = useAppSelector(isUserActive)
 	// Adding initial store goals as a filler;
 	useEffect(() => {
 		dispatch(addOneGoal({
@@ -26,10 +29,11 @@ const RootWrapper = () => {
 	}, [])
 
 	return (
-		<div className="App">
-			<Navbar />
+		<div className={ classNames([{ [styles.landing]: !isActive}, 'App']) }>
+			{ isActive && <Navbar /> }
+
 			<Outlet />
-		</div>
+		</div >
 	)
 }
 

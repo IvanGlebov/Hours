@@ -15,18 +15,18 @@ const Navbar = () => {
 			<div className={ styles.logoWrapper }>Hours</div>
 			<Link
 				className={ classNames({
-					[styles.linkActive]: location.pathname === '/'
-				}, styles.link) } href="/">Goals</Link>
+					[styles.linkActive]: location.pathname === '/goals'
+				}, styles.link) } href="goals">Goals</Link>
 			<Link
 				className={ classNames({
 					[styles.linkActive]: location.pathname === '/user'
 				}, styles.link) }
-				href="/user">User</Link>
+				href="user">User</Link>
 			<Link
 				className={ classNames({
 					[styles.linkActive]: location.pathname === '/settings'
 				}, styles.link) }
-				href="/settings">Settings</Link>
+				href="settings">Settings</Link>
 			{/*<Link*/}
 			{/*	className={ classNames({*/}
 			{/*		[styles.linkActive]: location.pathname === '/logout'*/}

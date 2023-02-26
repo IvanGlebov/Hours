@@ -54,3 +54,7 @@
     --active-color: rgb(20 158 202);
     --active-background: rgba(88,175,223,.1);
 }
+
+.landing {
+    grid-template-columns: 1fr;
+}

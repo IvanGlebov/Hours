@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { getGoals }                       from '../../features/goals/goalsSelectors'
 import { removeOneGoal }                  from '../../features/goals/goalsSlice'
 
-const Goals = () => {
+const Goals: React.FC = () => {
 
 	const dispatch = useAppDispatch()
 
