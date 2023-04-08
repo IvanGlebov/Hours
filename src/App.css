@@ -16,7 +16,7 @@
 
 :root {
   --primary-color: #0074a6;
-  --container-background: rgba(52,58,70,.8);
+  --container-background: rgba(52,58,70, 1);
   --modal-background: #23272f;
 
   --space: 16px;

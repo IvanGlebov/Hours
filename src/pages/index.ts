@@ -4,9 +4,9 @@ import Landing from './Landing/Landing'
 import User from './User/User'
 
 export {
-	Goals,
-	Settings,
-	Landing,
-	User,
+    Goals,
+    Settings,
+    Landing,
+    User,
 }
 

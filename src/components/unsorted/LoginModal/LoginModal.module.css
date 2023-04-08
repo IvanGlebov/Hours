@@ -1,0 +1,28 @@
+.modalContentWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    background-color: var(--container-background);
+    padding: calc(var(--space) * 2);
+    border-radius: var(--space);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
+
+.inputsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space);
+}
+
+

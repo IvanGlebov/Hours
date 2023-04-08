@@ -14,21 +14,21 @@ interface InputProps {
 }
 
 const BarChart = (props: InputProps) => {
-	return (
-		<div className={ styles.barWrapper }>
-			{ props.itemsArray.map((el) => (
-				<Tooltip
-					title={ el.tooltip + ` (${ el.hours }/${ props.maxSum })` }
-					key={ el.hours } placement="left"
-				>
-					<div style={ {
-						height: `${ el.hours / props.maxSum * 100 }%`,
-						backgroundColor: el.color,
-					} }/>
-				</Tooltip>
-			)) }
-		</div>
-	)
+    return (
+        <div className={ styles.barWrapper }>
+            { props.itemsArray.map((el) => (
+                <Tooltip
+                    title={ el.tooltip + ` (${ el.hours }/${ props.maxSum })` }
+                    key={ el.hours + el.color + el.tooltip } placement="left"
+                >
+                    <div style={ {
+                        height: `${ el.hours / props.maxSum * 100 }%`,
+                        backgroundColor: el.color,
+                    } }/>
+                </Tooltip>
+            )) }
+        </div>
+    )
 }
 
 export default BarChart

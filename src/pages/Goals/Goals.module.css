@@ -35,3 +35,16 @@
     height: inherit;
     padding-bottom: calc(var(--space) * 2);
 }
+
+.sideSectionContent {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space);
+    height: 100%;
+    padding-bottom: calc(var(--space) * 2);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
